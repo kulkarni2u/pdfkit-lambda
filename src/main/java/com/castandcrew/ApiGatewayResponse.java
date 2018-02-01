@@ -109,6 +109,16 @@ public class ApiGatewayResponse {
 			return this;
 		}
 
+		@Override
+		public String toString() {
+			return "Builder{" +
+					"statusCode=" + statusCode +
+					", headers=" + headers +
+					", rawBody='" + rawBody + '\'' +
+					", objectBody=" + objectBody +
+					'}';
+		}
+
 		public ApiGatewayResponse build() {
 			String body = null;
 			if (rawBody != null) {

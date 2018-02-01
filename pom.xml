@@ -11,6 +11,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <aws.lambda.sdk-version>1.11.271</aws.lambda.sdk-version>
+    <itext-version>7.0.0</itext-version>
   </properties>
 
   <dependencies>
@@ -52,17 +54,17 @@
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>kernel</artifactId>
-      <version>7.0.0</version>
+      <version>${itext-version}</version>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>layout</artifactId>
-      <version>7.0.0</version>
+      <version>${itext-version}</version>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>forms</artifactId>
-      <version>7.0.0</version>
+      <version>${itext-version}</version>
     </dependency>
   </dependencies>
 

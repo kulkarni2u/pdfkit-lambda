@@ -13,9 +13,10 @@ public class Response {
 		this.input = input;
 	}
 
-	public Response(String message) {
+	public Response(String message, String contentType) {
 		this.message = message;
 		this.input = new HashMap<>();
+		this.input.put("contentType", contentType);
 	}
 
 	public String getMessage() {
@@ -24,5 +25,13 @@ public class Response {
 
 	public Map<String, Object> getInput() {
 		return this.input;
+	}
+
+	@Override
+	public String toString() {
+		return "Response{" +
+				"message='" + message + '\'' +
+				", input=" + input +
+				'}';
 	}
 }
