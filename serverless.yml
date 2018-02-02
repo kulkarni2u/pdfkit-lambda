@@ -17,7 +17,7 @@ package:
   artifact: target/pdfkit-0.1.jar
 
 functions:
-  hello:
+  pdfkit:
     handler: com.castandcrew.Handler
     events:
       - s3:
