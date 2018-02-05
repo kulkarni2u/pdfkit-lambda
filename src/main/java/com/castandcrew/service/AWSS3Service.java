@@ -17,6 +17,7 @@ import java.util.Map;
 
 public class AWSS3Service {
     private final AmazonS3 s3Client;
+    private TransferManager transferManager;
 
     public AWSS3Service(AmazonS3 s3Client) {
         this.s3Client = s3Client;
@@ -24,6 +25,7 @@ public class AWSS3Service {
 
     public AWSS3Service() {
         this.s3Client = AmazonS3ClientBuilder.standard().build();
+        this.transferManager = TransferManagerBuilder.standard().withS3Client(s3Client).build();
     }
 
     public Map<String, String> getS3ObjectDetails(final S3Event event) {
@@ -57,8 +59,6 @@ public class AWSS3Service {
     }
 
     public void transerFile(final ByteArrayInputStream inputStream, final ObjectMetadata metadata, final String targetBucket, final String key) {
-        System.out.println("PDFKit - TransferManager");
-        final TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3Client).build();
         System.out.println("PDFKit - Transfer starting");
         try {
             Upload upload = transferManager.upload(targetBucket, key, inputStream, metadata);

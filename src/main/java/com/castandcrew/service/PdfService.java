@@ -34,11 +34,7 @@ public class PdfService {
         final String fileName = "target_" + object.getKey();
 
         logMessage(String.format("Copying to bucket: %s, key: %s", targetBucket, fileName));
-//        boolean doesBucketExist = service.doesBucketExists(targetBucket);
-//        logMessage("Bucket Exists?" + doesBucketExist);
-//        if (doesBucketExist) {
-            service.transerFile(inputStream, metadata, targetBucket, fileName);
-//        }
+        service.transerFile(inputStream, metadata, targetBucket, fileName);
     }
 
     private ByteArrayInputStream processRequest(S3Object object) throws IOException {
